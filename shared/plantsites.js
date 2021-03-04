@@ -13,7 +13,7 @@ export const PLANTSITES = [
         image: "/assets/images/pothead.jpg",
         elevation: 877,
         featured: false,
-        description: "How to plant indoor and outdoor plants."
+        description: "How to plant indoor and outdoor plants in pots."
     },
     {
         id: 2,

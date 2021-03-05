@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
 import PlantsiteInfo from './PlantsiteInfoComponent';
-import { View } from 'react-native';
-import { PLANTSITES } from '../shared/plantsites';
+import { View, Platform } from 'react-native';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+
+const DirectoryNavigator = createStackNavigator(
+    {
+        Directory: { screen: Directory },
+        PlantsiteInfo: { screen: PlantsiteInfo }
+    }, 
+    {
+        initialRouteName: 'Directory',
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            }
+        }
+    }
+);
+
+const AppNavigator = createAppContainer(DirectoryNavigator);
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            plantsites: PLANTSITES,
-            selectedPlantsite: null
-        };
-    }
-
-    onPlantsiteSelect(plantsiteId) {
-        this.setState({selectedPlantsite: plantsiteId});
-    }
-
     render() {
         return (
-            <View style={{flex: 1}}>
-                <Directory
-                    plantsites={this.state.plantsites}
-                    onPress={plantsiteId => this.onPlantsiteSelect(plantsiteId)}
-                />
-                <PlantsiteInfo
-                    plantsite={this.state.plantsites.filter(
-                        plantsite => plantsite.id === this.state.selectedPlantsite)[0]}
-                />
+            <View
+                style={{
+                    flex: 1,
+                    paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
+            }}>
+                <AppNavigator />
             </View>
         );
     }

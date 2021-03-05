@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
+import { PLANTSITES } from '../shared/plantsites';
 
-function Directory(props) {
+class Directory extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            plantsites: PLANTSITES
+        };
+    }
 
-    const renderDirectoryItem = ({item}) => {
-        return (
-            <ListItem
-                title={item.name}
-                subtitle={item.description}
-                onPress={() => props.onPress(item.id)}
-                leftAvatar={{ source: require('./images/gardening-girl.jpg')}}
-            />
-        );
+    static navigationOptions = {
+        title: 'Directory'
     };
 
-    return (
-        <FlatList
-            data={props.plantsites}
-            renderItem={renderDirectoryItem}
-            keyExtractor={item => item.id.toString()}
-        />
-    );
-}
+    render() {
+        const { navigate } = this.props.navigation;
+        const renderDirectoryItem = ({item}) => {
+            return (
+                <ListItem
+                    title={item.name}
+                    subtitle={item.description}
+                    onPress={() => navigate('PlantsiteInfo', { plantsiteId: item.id })}
+                    leftAvatar={{ source: require('./images/gardening-girl.jpg')}}
+                />
+            );
+        };
+
+        return (
+            <FlatList
+                data={this.state.plantsites}
+                renderItem={renderDirectoryItem}
+                keyExtractor={item => item.id.toString()}
+            />
+        );
+        }
+    }
 
 export default Directory;

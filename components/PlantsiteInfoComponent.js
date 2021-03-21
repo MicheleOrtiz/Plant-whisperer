@@ -3,12 +3,18 @@ import { Text, View, ScrollView, FlatList } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
+import { postFavorite } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
     return {
         plantsites: state.plantsites,
-        comments: state.comments
+        comments: state.comments,
+        favorites: state.favorites
     };
+};
+
+const mapDispatchToProps = {
+    postFavorite: plantsiteId => (postFavorite(plantsiteId))
 };
 
 function RenderPlantsite(props) {
@@ -65,15 +71,8 @@ function RenderComments({comments}) {
 
 class PlantsiteInfo extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            favorite: false
-        };
-    }
-
-    markFavorite() {
-        this.setState({favorite: true});
+    markFavorite(plantsiteId) {
+        this.props.postFavorite(plantsiteId);
     }
 
     static navigationOptions = {
@@ -87,8 +86,8 @@ class PlantsiteInfo extends Component {
         return (
             <ScrollView>
                 <RenderPlantsite plantsite={plantsite}
-                    favorite={this.state.favorite}
-                    markFavorite={() => this.markFavorite()}
+                    favorite={this.props.favorites.includes(plantsiteId)}
+                    markFavorite={() => this.markFavorite(plantsiteId)}
                 />
                 <RenderComments comments={comments} />
             </ScrollView>
@@ -96,4 +95,5 @@ class PlantsiteInfo extends Component {
     }
 }
 
-export default connect(mapStateToProps)(PlantsiteInfo);
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlantsiteInfo);

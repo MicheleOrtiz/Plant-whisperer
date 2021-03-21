@@ -1,30 +1,34 @@
 export const PARTNERS = [
     {
         id: 0,
-        name: "Bootstrap Outfitters",
-        image: "/assets/images/bootstrap-logo.png",
+        name: "Gardening is my therapy",
+        image: "/assets/images/gardening-girl.jpg",
+        elevation: 1233,
         featured: false,
-        description: "Bootstrap Outfitters supplies you with the gear you need at prices you can't beat."
+        description: "I don't need therapy I talk to my plants. Tips to efficient gardening."
     },
     {
         id: 1,
-        name: "Git Out Expeditions",
-        image: "/assets/images/git-logo.png",
+        name:"Pothead ",
+        image: "/assets/images/pothead.jpg",
+        elevation: 877,
         featured: false,
-        description: "Join Git Out Expeditions to explore new horizons with a group of other adventurers!"
+        description: "How to plant indoor and outdoor plants in pots."
     },
     {
         id: 2,
-        name: "Mongo Fly Shop",
-        image: "/assets/images/mongo-logo.png",
+        name:"I wet my plants",
+        image: "/assets/images/i-wet-my-plants.jpg",
+        elevation: 2901,
         featured: false,
-        description: "Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop."
+        description: "The right way to water your plants."
     },
     {
         id: 3,
-        name: "Node Outdoor Apparel",
-        image: "/assets/images/node-logo.png",
+        name:"You grow Girl!",
+        image: "/assets/images/you-grow-girl.jpg",
+        elevation: 42,
         featured: true,
-        description: "From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to get you covered."
+        description: "Learn How to Fertilize your plants the Correct Way."
     }
-]
+];

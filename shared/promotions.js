@@ -1,9 +1,9 @@
 export const PROMOTIONS = [
     {
         id: 0,
-        name: "Mountain Adventure",
-        image: "/assets/images/breadcrumb-trail.jpg",
+        name: "Gardening is Therapeutic",
+        image: "/assets/images/gardening-girl.jpg",
         featured: true,
-        description: "Book a 5-day mountain trek with a seasoned outdoor guide! Fly fishing equipment and lessons provided."
+        description: "I don't need therapy I talk to my plants. Tips to efficient gardening."
     }
 ]

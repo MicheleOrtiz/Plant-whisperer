@@ -2,35 +2,35 @@
   "plantsites": [
     {
       "id": 0,
-      "name": "React Lake Campground",
-      "image": "images/react-lake.jpg",
+      "name": "Gardening is My Therapy",
+      "image": "images/gardening-girl.jpg",
       "elevation": 1233,
       "featured": false,
-      "description": "Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers."
+      "description": "I don't need therapy I talk to my plants. Tips to efficient gardening."
     },
     {
       "id": 1,
-      "name": "Chrome River Campground",
-      "image": "images/chrome-river.jpg",
+      "name": "Pothead",
+      "image": "images/pothead.jpg",
       "elevation": 877,
       "featured": false,
-      "description": "Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River."
+      "description": "How to plant indoor and outdoor plants in pots."
     },
     {
       "id": 2,
-      "name": "Breadcrumb Trail Campground",
-      "image": "images/breadcrumb-trail.jpg",
+      "name": "I Wet My Plants",
+      "image": "images/i-wet-my-plants.jpg",
       "elevation": 2901,
       "featured": false,
-      "description": "Let NuCamp be your guide to this off-the-beaten-path, hike-in-only campground."
+      "description":"The right way to water your plants."
     },
     {
       "id": 3,
-      "name": "Redux Woods Campground",
-      "image": "images/redux-woods.jpg",
+      "name": "You Grow Girl",
+      "image": "images/you-grow-girl.jpg",
       "elevation": 42,
       "featured": true,
-      "description": "You'll never want to leave this hidden gem, deep within the lush Redux Woods."
+      "description": "How to fertilize your plants."
     }
   ],
   "comments": [
@@ -38,200 +38,200 @@
       "id": 0,
       "plantsiteId": 0,
       "rating": 5,
-      "text": "What a magnificent view!",
-      "author": "Tinus Lorvaldes",
+      "text": "I love this app! My black thumb is now green. I feel like a plant expert in just a few clips of learning a few tips.",
+      "author": "Morgan Leach",
       "date": "2018-10-25T16:30Z"
     },
     {
       "id": 1,
       "plantsiteId": 0,
       "rating": 4,
-      "text": "The campground was beautiful, but the bugs could bite sometimes.",
-      "author": "Brennen Ech",
+      "text": "My yard is finally beautiful and full of vibrant colors thanks to the insight I gained from Flower Power app.",
+      "author": "Diane Blake",
       "date": "2017-06-17T03:33Z"
     },
     {
       "id": 2,
       "plantsiteId": 0,
       "rating": 5,
-      "text": "I caught a world-record-breaking trout here on my last visit.",
-      "author": "McKenzie Sebastian",
+      "text": "All of my poor succulent babies were dying one by one before I understood how much and how often I should water them correctly. Now I am proud to say they are all thriving ",
+      "author": "Summer Hatton",
       "date": "2019-02-18T18:12Z"
     },
     {
       "id": 3,
       "plantsiteId": 0,
       "rating": 5,
-      "text": "A wonderful place to reconnect with nature.",
-      "author": "Jordan Runn",
+      "text":  "A wonderful place to reconnect with nature is in my own garden thanks to Flower Power app.",
+      "author": "Josh Dunn",
       "date": "2019-08-04T20:11Z"
     },
     {
       "id": 4,
       "plantsiteId": 0,
       "rating": 4,
-      "text": "The stars at night were a revelation!",
-      "author": "Ann Dabramov",
+      "text": "I have finally mastered caring for my Fiddle Leaf Fig tree!",
+      "author": "Angelina Rupert",
       "date": "2018-07-23T19:44Z"
     },
     {
       "id": 5,
       "plantsiteId": 1,
       "rating": 4,
-      "text": "The campground was beautiful, but the bugs could bite sometimes.",
-      "author": "Brennen Ech",
+      "text": "Plant shopping has never felt more fun knowing that my new green friends will finally hang around longer than a few months.",
+      "author": "Brandon Miles",
       "date": "2017-06-17T03:33Z"
     },
     {
       "id": 6,
       "plantsiteId": 1,
       "rating": 5,
-      "text": "I caught a world-record-breaking trout here on my last visit.",
-      "author": "McKenzie Sebastian",
+      "text": "I tried everything when it came to fertilizing my plants without harming them and I have finally learn what works best for my vegetables and it is organic and easy on my wallet thanks to Flower Power.",
+      "author": "Paris Mutan",
       "date": "2019-02-18T18:12Z"
     },
     {
       "id": 7,
       "plantsiteId": 1,
       "rating": 5,
-      "text": "A wonderful place to reconnect with nature.",
-      "author": "Jordan Runn",
+      "text": "A wonderful place to reconnect with nature is in my own garden thanks to Flower Power app.",
+      "author": "Josh Dunn",
       "date": "2019-08-04T20:11Z"
     },
     {
       "id": 8,
       "plantsiteId": 1,
       "rating": 4,
-      "text": "The stars at night were a revelation!",
-      "author": "Ann Dabramov",
+      "text": "I have finally mastered caring for my Fiddle Leaf Fig tree!",
+      "author":"Angelina Rupert",
       "date": "2018-07-23T19:44Z"
     },
     {
       "id": 9,
       "plantsiteId": 1,
       "rating": 5,
-      "text": "What a magnificent view!",
-      "author": "Tinus Lorvaldes",
+      "text":  "I love this app! My black thumb is now green. I feel like a plant expert in just a few clips of learning a few tips.",
+      "author": "Morgan Leach",
       "date": "2018-10-25T16:30Z"
     },
     {
       "id": 10,
       "plantsiteId": 2,
       "rating": 5,
-      "text": "I caught a world-record-breaking trout here on my last visit.",
-      "author": "McKenzie Sebastian",
+      "text": "Plant shopping has never felt more fun knowing that my new green friends will finally hang around longer than a few months.",
+      "author": "Brandon Miles",
       "date": "2019-02-18T18:12Z"
     },
     {
       "id": 11,
       "plantsiteId": 2,
       "rating": 5,
-      "text": "A wonderful place to reconnect with nature.",
-      "author": "Jordan Runn",
+      "text":"A wonderful place to reconnect with nature is in my own garden thanks to Flower Power app.",
+      "author":"Josh Dunn",
       "date": "2019-08-04T20:11Z"
     },
     {
       "id": 12,
       "plantsiteId": 2,
       "rating": 4,
-      "text": "The stars at night were a revelation!",
-      "author": "Ann Dabramov",
+      "text": "All of my poor succulent babies were dying one by one before I understood how much and how often I should water them correctly. Now I am proud to say they are all thriving ",
+      "author":"Summer Hatton",
       "date": "2018-07-23T19:44Z"
     },
     {
       "id": 13,
       "plantsiteId": 2,
       "rating": 5,
-      "text": "What a magnificent view!",
-      "author": "Tinus Lorvaldes",
+      "text": "I have finally mastered caring for my Fiddle Leaf Fig tree!",
+      "author":  "Angelina Rupert",
       "date": "2018-10-25T16:30Z"
     },
     {
       "id": 14,
       "plantsiteId": 2,
       "rating": 4,
-      "text": "The campground was beautiful, but the bugs could bite sometimes.",
-      "author": "Brennen Ech",
+      "text": "Plant shopping has never felt more fun knowing that my new green friends will finally hang around longer than a few months.",
+      "author":  "Brandon Miles",
       "date": "2017-06-17T03:33Z"
     },
     {
       "id": 15,
       "plantsiteId": 3,
       "rating": 5,
-      "text": "A wonderful place to reconnect with nature.",
-      "author": "Jordan Runn",
+      "text": "My yard is finally beautiful and full of vibrant colors thanks to the insight I gained from Flower Power app.",
+      "author": "Diane Blake",
       "date": "2019-08-04T20:11Z"
     },
     {
       "id": 16,
       "plantsiteId": 3,
       "rating": 4,
-      "text": "The stars at night were a revelation!",
-      "author": "Ann Dabramov",
+      "text": "I have finally mastered caring for my Fiddle Leaf Fig tree!",
+      "author": "Angelina Rupert",
       "date": "2018-07-23T19:44Z"
     },
     {
       "id": 17,
       "plantsiteId": 3,
       "rating": 5,
-      "text": "What a magnificent view!",
-      "author": "Tinus Lorvaldes",
+      "text": "A wonderful place to reconnect with nature is in my own garden thanks to Flower Power app.",
+      "author": "Josh Dunn",
       "date": "2018-10-25T16:30Z"
     },
     {
       "id": 18,
       "plantsiteId": 3,
       "rating": 4,
-      "text": "The campground was beautiful, but the bugs could bite sometimes.",
-      "author": "Brennen Ech",
+      "text": "I love this app! My black thumb is now green. I feel like a plant expert in just a few clips of learning a few tips.",
+      "author": "Morgan Leach",
       "date": "2017-06-17T03:33Z"
     },
     {
       "id": 19,
       "plantsiteId": 3,
       "rating": 5,
-      "text": "I caught a world-record-breaking trout here on my last visit.",
-      "author": "McKenzie Sebastian",
+      "text": "Plant shopping has never felt more fun knowing that my new green friends will finally hang around longer than a few months.",
+      "author": "Brandon Miles",
       "date": "2019-02-18T18:12Z"
     }
   ],
   "partners": [
     {
       "id": 0,
-      "name": "Bootstrap Outfitters",
-      "image": "images/bootstrap-logo.png",
+      "name": "General Houseplant Watering Guidelines",
+      "image": "images/succulent-logo.jpg",
       "featured": false,
-      "description": "Bootstrap Outfitters supplies you with the gear you need at prices you can't beat."
+      "description": "Too much or just enough?"
     },
     {
       "id": 1,
-      "name": "Git Out Expeditions",
-      "image": "images/git-logo.png",
+      "name": "How to Tell When it’s Time to Water your Plants",
+      "image": "images/succulent-logo.jpg",
       "featured": false,
-      "description": "Join Git Out Expeditions to explore new horizons with a group of other adventurers!"
+      "description": "Are they thirsty?"
     },
     {
       "id": 2,
-      "name": "Mongo Fly Shop",
-      "image": "images/mongo-logo.png",
+      "name": "How much to water your plant?",
+      "image": "images/succulent-logo.jpg",
       "featured": false,
-      "description": "Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop."
+      "description": "When it’s time to water, don’t be scared to give your plant a good thirst-quenching soak."
     },
     {
       "id": 3,
-      "name": "Node Outdoor Apparel",
-      "image": "images/node-logo.png",
+      "name": "Overwatered Plant?",
+      "image": "images/succulent-logo.jpg",
       "featured": true,
-      "description": "From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to get you covered."
+      "description": "The most common signs of an overwatered plant."
     }
   ],
   "promotions": [
     {
       "id": 0,
-      "name": "Mountain Adventure",
-      "image": "images/breadcrumb-trail.jpg",
+      "name": "I Wet My Plants",
+      "image": "images/i-wet-my-plants.jpg",
       "featured": true,
-      "description": "Book a 5-day mountain trek with a seasoned outdoor guide! Fly fishing equipment and lessons provided."
+      "description": "The right way to water your plants."
     }
   ],
   "feedback": [

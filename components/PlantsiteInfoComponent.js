@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, FlatList } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
-import { PLANTSITES } from '../shared/plantsites';
-import { COMMENTS } from '../shared/comments';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+
+const mapStateToProps = state => {
+    return {
+        plantsites: state.plantsites,
+        comments: state.comments
+    };
+};
 
 function RenderPlantsite(props) {
 
     const {plantsite} = props;
+   
     if (plantsite) {
         return (
             <Card 
                 featuredTitle={plantsite.name}
-                image={require('./images/gardening-girl.jpg')}
-            >
+                image={{uri: baseUrl + plantsite.image}}>
+            
                 <Text style={{margin: 10}}>
                     {plantsite.description}
                 </Text>
                 <Icon
                     name={props.favorite ? 'leaf' : 'leaf-o'}
                     type='font-awesome'
-                    color='#f50'
+                    color='#ffa07a'
                     raised
                     reverse
                     onPress={() => props.favorite ? 
@@ -44,7 +52,7 @@ function RenderComments({comments}) {
     };
 
     return (
-        <Card title='Comments'>
+        <Card title='Reviews'>
             <FlatList
                 data={comments}
                 renderItem={renderCommentItem}
@@ -60,8 +68,6 @@ class PlantsiteInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            plantsites: PLANTSITES,
-            comments: COMMENTS,
             favorite: false
         };
     }
@@ -76,12 +82,12 @@ class PlantsiteInfo extends Component {
 
     render() {
         const plantsiteId = this.props.navigation.getParam('plantsiteId');
-        const plantsite = this.state.plantsites.filter(plantsite => plantsite.id === plantsiteId)[0];
-        const comments = this.state.comments.filter(comment => comment.plantsiteId === plantsiteId);
+        const plantsite = this.props.plantsites.plantsites.filter(plantsite => plantsite.id === plantsiteId)[0];
+        const comments = this.props.comments.comments.filter(comment => comment.plantsiteId === plantsiteId);
         return (
             <ScrollView>
-                <RenderPlantsite plantsite={plantsite} 
-                favorite={this.state.favorite}
+                <RenderPlantsite plantsite={plantsite}
+                    favorite={this.state.favorite}
                     markFavorite={() => this.markFavorite()}
                 />
                 <RenderComments comments={comments} />
@@ -90,4 +96,4 @@ class PlantsiteInfo extends Component {
     }
 }
 
-export default PlantsiteInfo;
+export default connect(mapStateToProps)(PlantsiteInfo);

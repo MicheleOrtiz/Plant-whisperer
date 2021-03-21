@@ -10,6 +10,16 @@ import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
+import { connect } from 'react-redux';
+import { fetchPlantsites, fetchComments, fetchPromotions,
+    fetchPartners } from '../redux/ActionCreators';
+
+const mapDispatchToProps = {
+    fetchPlantsites,
+    fetchComments,
+    fetchPromotions,
+    fetchPartners
+};
 
 const DirectoryNavigator = createStackNavigator(
     {
@@ -30,7 +40,7 @@ const DirectoryNavigator = createStackNavigator(
         initialRouteName: 'Directory',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#2e8b57'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -47,7 +57,7 @@ const HomeNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#2e8b57'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -69,7 +79,7 @@ const AboutNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#2e8b57'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -93,7 +103,7 @@ const ContactNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#2e8b57'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -119,7 +129,7 @@ const CustomDrawerContentComponent = props => (
                     <Image source={require('./images/yoga-lotus-flower.jpg')} style={styles.drawerImage} />
                 </View>
                 <View style={{flex: 2}}>
-                    <Text style={styles.drawerHeaderText}>FLOWER POWER</Text>
+                    <Text style={styles.drawerHeaderText}>Flower Power</Text>
                 </View>
             </View>
             <DrawerItems {...props} />
@@ -158,7 +168,7 @@ const MainNavigator = createDrawerNavigator(
         About: {
             screen: AboutNavigator,
             navigationOptions: {
-                drawerLabel: 'About Us',
+                drawerLabel: 'I Wet My Plants',
                 drawerIcon: ({tintColor}) => (
                     <Icon
                         name='leaf'
@@ -185,7 +195,7 @@ const MainNavigator = createDrawerNavigator(
         }
     },
     {
-        drawerBackgroundColor: '#CEC8FF',
+        drawerBackgroundColor: '#faebd7',
         contentComponent: CustomDrawerContentComponent
     }
 );
@@ -193,6 +203,14 @@ const MainNavigator = createDrawerNavigator(
 const AppNavigator = createAppContainer(MainNavigator);
 
 class Main extends Component {
+
+        componentDidMount() {
+            this.props.fetchPlantsites();
+            this.props.fetchComments();
+            this.props.fetchPromotions();
+            this.props.fetchPartners();
+        }
+    
     
     render() {
         return (
@@ -211,7 +229,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     drawerHeader: {
-        backgroundColor: '#5637DD',
+        backgroundColor: '#2e8b57',
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',
@@ -235,4 +253,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Main;
+export default connect(null, mapDispatchToProps)(Main);

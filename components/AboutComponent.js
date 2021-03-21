@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
 import { ScrollView, Text, FlatList } from 'react-native';
-import { PARTNERS } from '../shared/partners';
 import { ListItem, Card} from 'react-native-elements';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+
+const mapStateToProps = state => {
+    return {
+        partners: state.partners
+    };
+};
 
 function Mission () {
     return(
-    <Card title="Our Mission"> 
-<Text>We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</Text>
+    <Card title="The Right Way To Water Your Plants"> 
+<Text>Plants need water. Caring for plants means you’ll have to water your plants.
+
+But when should you water your lovely houseplant? And how much water to give?
+
+The number 1 reason that plants don’t make it, is because of overwatering.
+
+Watering too often can quickly be the end of your plant.
+
+Many people say they water on a schedule, like every Sunday morning.
+
+But how do you know your plant is thirsty every Sunday morning without first checking the soil?
+
+What also happens a lot is that the plant is looking sad, so water is given. The next day it still doesn’t look happy, so watering again. And maybe again in another two days.
+
+This is too much. And will only make things worse.
+
+
+    </Text>
     </Card>
  )
 }
 
 
 class About extends Component {
-    constructor(props){
-        super(props);
-        this.state= {
-            partners: PARTNERS
-        }
-    }
+   
     static navigationOptions = {
-        title: 'About Us'
+        title: 'I Wet My Plants'
     }
    
     render() {
@@ -29,16 +48,17 @@ class About extends Component {
                 <ListItem
                     title={item.name}
                     subtitle={item.description} 
-                    leftAvatar={{ source: require('./images/you-grow-girl.jpg')}}
+                    leftAvatar={{source: {uri: baseUrl + item.image}}}
                 />
             );
-        }
+        };
+
         return(
             <ScrollView> 
                 <Mission />
-                <Card title='Community Partners'>
+                <Card title='Flower Power'>
                     <FlatList
-                   data={this.state.partners}
+                   data={this.props.partners.partners}
                    renderItem={renderPartner}
                    keyExtractor={item => item.id.toString()}
                     />
@@ -50,4 +70,4 @@ class About extends Component {
 }
 
 
-export default About;
+export default connect(mapStateToProps)(About);

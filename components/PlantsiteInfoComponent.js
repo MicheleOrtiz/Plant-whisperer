@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, FlatList } from 'react-native';
+import { Text, View, ScrollView, FlatList, Share } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
@@ -21,6 +21,16 @@ function RenderPlantsite(props) {
 
     const {plantsite} = props;
    
+    const sharePlantsite = (title, message, url) => {
+        Share.share({
+            title: title,
+            message: `${title}: ${message} ${url}`,
+            url: url
+        },{
+            dialogTitle: 'Share ' + title
+        });
+    };
+
     if (plantsite) {
         return (
             <Card 
@@ -39,6 +49,14 @@ function RenderPlantsite(props) {
                     onPress={() => props.favorite ? 
                         console.log('Already set as a favorite') : props.markFavorite()}
                 />
+                 <Icon
+                            name={'share'}
+                            type='font-awesome'
+                            color='#5637DD'
+                            raised
+                            reverse
+                            onPress={() => sharePlantsite(plantsite.name, plantsite.description, baseUrl + plantsite.image)} 
+                        />
             </Card>
         );
     }

@@ -193,6 +193,7 @@ const MainNavigator = createDrawerNavigator(
         Directory: {
             screen: DirectoryNavigator,
             navigationOptions: {
+                drawerLabel: 'Gardening Tips',
                 drawerIcon: ({tintColor}) => (
                     <Icon
                         name='leaf'
@@ -206,7 +207,7 @@ const MainNavigator = createDrawerNavigator(
         About: {
             screen: AboutNavigator,
             navigationOptions: {
-                drawerLabel: 'I Wet My Plants',
+                drawerLabel: 'Propagate Plants',
                 drawerIcon: ({tintColor}) => (
                     <Icon
                         name='leaf'

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, Animated } from 'react-native';
 import { Card } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
@@ -31,13 +31,35 @@ function RenderItem({item}) {
 
 class Home extends Component {
 
+      constructor(props) {
+            super(props);
+            this.state = {
+                scaleValue: new Animated.Value(0)
+            };
+        }
+    
+        animate() {
+            Animated.timing(
+                this.state.scaleValue,
+                {
+                    toValue: 1,
+                    duration: 1500,
+                    useNativeDriver: true
+                }
+            ).start();
+        }
+    
+        componentDidMount() {
+            this.animate();
+        }
+
     static navigationOptions = {
         title: 'Gardening is My Therapy'
     }
 
     render() {
         return (
-            <ScrollView>
+            <Animated.ScrollView style={{transform: [{scale: this.state.scaleValue}]}}>
                 <RenderItem
                     item={this.props.plantsites.plantsites.filter(plantsite => plantsite.featured)[0]}
                 />
@@ -47,7 +69,7 @@ class Home extends Component {
                 <RenderItem
                     item={this.props.partners.partners.filter(partner => partner.featured)[0]}
                 />
-            </ScrollView>
+            </Animated.ScrollView>
         );
     }
 }

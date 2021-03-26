@@ -12,22 +12,8 @@ const mapStateToProps = state => {
 
 function Mission () {
     return(
-    <Card title="The Right Way To Water Your Plants"> 
-<Text>Plants need water. Caring for plants means you’ll have to water your plants.
-
-But when should you water your lovely houseplant? And how much water to give?
-
-The number 1 reason that plants don’t make it, is because of overwatering.
-
-Watering too often can quickly be the end of your plant.
-
-Many people say they water on a schedule, like every Sunday morning.
-
-But how do you know your plant is thirsty every Sunday morning without first checking the soil?
-
-What also happens a lot is that the plant is looking sad, so water is given. The next day it still doesn’t look happy, so watering again. And maybe again in another two days.
-
-This is too much. And will only make things worse.
+    <Card title="How to Water Propagate Plants and Make New Plants for Free!"> 
+<Text>Did you know you can propagate cuttings from your plant and make more plants? Rooting houseplants in water is the easiest way to propagate your plants. New plants for free! And it is so easy, you don’t need a green thumb! Increase your indoor plant collection and fill your home with your own water propagated plants. Self-propagated plants are perfect low cost, but thoughtful gifts for friends, fellow plant lovers, and family.
 
 
     </Text>
@@ -39,7 +25,7 @@ This is too much. And will only make things worse.
 class About extends Component {
    
     static navigationOptions = {
-        title: 'I Wet My Plants'
+        title: " Propagation Tips"
     }
    
     render() {
@@ -56,7 +42,7 @@ class About extends Component {
         return(
             <ScrollView> 
                 <Mission />
-                <Card title='Flower Power'>
+                <Card title="I'm rooting for you!">
                     <FlatList
                    data={this.props.partners.partners}
                    renderItem={renderPartner}

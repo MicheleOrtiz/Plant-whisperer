@@ -4,6 +4,7 @@ import { Card, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 import { postFavorite } from '../redux/ActionCreators';
+import { color } from 'react-native-reanimated';
 
 const mapStateToProps = state => {
     return {
@@ -52,7 +53,7 @@ function RenderPlantsite(props) {
                  <Icon
                             name={'share'}
                             type='font-awesome'
-                            color='#5637DD'
+                            color='#2e8b57'
                             raised
                             reverse
                             onPress={() => sharePlantsite(plantsite.name, plantsite.description, baseUrl + plantsite.image)} 
@@ -69,14 +70,13 @@ function RenderComments({comments}) {
         return (
             <View style={{margin: 10}}>
                 <Text style={{fontSize: 14}}>{item.text}</Text>
-                <Text style={{fontSize: 12}}>{item.rating} Stars</Text>
                 <Text style={{fontSize: 12}}>{`-- ${item.author}, ${item.date}`}</Text>
             </View>
         );
     };
 
     return (
-        <Card title='Reviews'>
+        <Card title='Tips'>
             <FlatList
                 data={comments}
                 renderItem={renderCommentItem}
@@ -94,7 +94,7 @@ class PlantsiteInfo extends Component {
     }
 
     static navigationOptions = {
-        title: 'Plantsite Information'
+        title: 'Gardening Tips'
     }
 
     render() {

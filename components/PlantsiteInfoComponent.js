@@ -4,7 +4,7 @@ import { Card, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 import { postFavorite } from '../redux/ActionCreators';
-import { color } from 'react-native-reanimated';
+
 
 const mapStateToProps = state => {
     return {
@@ -69,6 +69,7 @@ function RenderComments({comments}) {
     const renderCommentItem = ({item}) => {
         return (
             <View style={{margin: 10}}>
+ 
                 <Text style={{fontSize: 14}}>{item.text}</Text>
                 <Text style={{fontSize: 12}}>{`-- ${item.author}, ${item.date}`}</Text>
             </View>

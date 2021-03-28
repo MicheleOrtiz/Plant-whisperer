@@ -152,3 +152,8 @@ export const addFavorite = plantsiteId => ({
     type: ActionTypes.ADD_FAVORITE,
     payload: plantsiteId
 });
+
+export const deleteFavorite = plantsiteId => ({
+    type: ActionTypes.DELETE_FAVORITE,
+    payload: plantsiteId
+});

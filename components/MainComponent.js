@@ -15,6 +15,7 @@ import { fetchPlantsites, fetchComments, fetchPromotions,
     fetchPartners } from '../redux/ActionCreators';
 import Login from './LoginComponent';
 import NetInfo from '@react-native-community/netinfo';
+import Favorites from './FavoritesComponent';
 
 const mapDispatchToProps = {
     fetchPlantsites,
@@ -97,6 +98,28 @@ const AboutNavigator = createStackNavigator(
     }
 );
 
+const FavoritesNavigator = createStackNavigator(
+    {
+        Favorites: { screen: Favorites }
+    },
+    {
+        defaultNavigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#2e8b57'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='leaf'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
 
 const ContactNavigator = createStackNavigator(
     {
@@ -218,6 +241,20 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
+        Favorites: {
+            screen: FavoritesNavigator,
+            navigationOptions: {
+                drawerLabel: 'My Favorites',
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='leaf'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },
         Contact: {
             screen: ContactNavigator,
             navigationOptions: {
@@ -250,18 +287,25 @@ class Main extends Component {
             this.props.fetchPromotions();
             this.props.fetchPartners();
 
-            NetInfo.fetch().then(connectionInfo => {
-                (Platform.OS === 'ios')
-                    ? Alert.alert('Initial Network Connectivity Type:', connectionInfo.type)
-                    : ToastAndroid.show('Initial Network Connectivity Type: ' +
-                        connectionInfo.type, ToastAndroid.LONG);
-            });
+            this.showNetInfo();
+
+        this.unsubscribeNetInfo = NetInfo.addEventListener(connectionInfo => {
+            this.handleConnectivityChange(connectionInfo);
+        });
+    }
+
+    showNetInfo = async () => {
+        const connectionInfo = await NetInfo.fetch();
+        (Platform.OS === 'ios')
+        ? Alert.alert('Initial Network Connectivity Type:', connectionInfo.type)
+        : ToastAndroid.show('Initial Network Connectivity Type: ' +
+        connectionInfo.type, ToastAndroid.LONG);
+        
+    }
     
-            this.unsubscribeNetInfo = NetInfo.addEventListener(connectionInfo => {
-                this.handleConnectivityChange(connectionInfo);
-            });
-        }
-    
+       
+       
+       
         componentWillUnmount() {
             this.unsubscribeNetInfo();
         }

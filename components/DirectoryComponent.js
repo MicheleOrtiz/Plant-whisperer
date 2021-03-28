@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
-import { Tile } from 'react-native-elements';
+import { FlatList, StyleSheet} from 'react-native';
+import {  Tile } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 
@@ -22,12 +22,17 @@ class Directory extends Component {
         const renderDirectoryItem = ({item}) => {
             return (
                 <Tile
+                
                 title={item.name}
-                caption={item.description }
+                caption = {item.description}
                 featured
+                imageContainerStyle={styles.imageContainer}
+
                 onPress={() => navigate('PlantsiteInfo', { plantsiteId: item.id })}
                 imageSrc={{uri: baseUrl + item.image}}
+               
                 />
+                
             );
         };
 
@@ -41,4 +46,12 @@ class Directory extends Component {
         }
     }
 
+    const styles = StyleSheet.create({
+        imageContainer: {
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    
+        },
+        
+    });
+    
     export default connect(mapStateToProps)(Directory);
